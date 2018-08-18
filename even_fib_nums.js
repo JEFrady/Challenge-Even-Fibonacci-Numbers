@@ -7,8 +7,14 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
+  let arr = [1,2];
+  let i=0;
+  while (arr[i]+ arr[i+1] <= maxFibValue) {
+    arr.push(arr[i] + arr[i+1]);
+    i++;
+  }
 
-  // do your work here
+  sum = arr.filter(elem => elem%2 == 0).reduce((acc,total) => (acc+total));
 
   return sum;
 }
